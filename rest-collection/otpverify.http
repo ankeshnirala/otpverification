@@ -1,0 +1,22 @@
+@baseUrl = http://localhost:8000
+
+### Generate OTP
+POST {{baseUrl}}/otp
+Accept: application/json
+Content-Type: application/json
+
+{
+    "phoneNumber": "+918581933056"
+}
+
+### Verufy OTP
+POST {{baseUrl}}/verify
+Accept: application/json
+Content-Type: application/json
+
+{
+    "user": {
+        "phoneNumber": "+918581933056"
+    },
+    "code": "255689"
+}

@@ -1,7 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"github.com/ankeshnirala/otpverification/api"
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
-	fmt.Println("Hello Ankesh")
+	router := gin.Default()
+
+	app := api.Config{Router: router}
+	app.Routes()
+
+	router.Run(":8000")
 }
